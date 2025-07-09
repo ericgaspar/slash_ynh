@@ -57,7 +57,7 @@ yunohost service add "$app" --description="A short description of the app" --log
 #=================================================
 ynh_script_progression "Installing the app..."
 
-pushd "$install_dir/frontend/frontend/web"
+pushd "$install_dir/frontend/web"
  	ynh_hide_warnings ynh_exec_as_app pnpm install
  	ynh_hide_warnings ynh_exec_as_app pnpm build
 popd
