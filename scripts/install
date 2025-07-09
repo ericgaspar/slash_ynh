@@ -72,12 +72,14 @@ ynh_script_progression "Building $app..."
 ynh_go_install
 
 pushd $install_dir/bin/slash/
-	ynh_hide_warnings ynh_exec_as_app CGO_ENABLED=0 go build -o $install_dir/
+	ynh_hide_warnings ynh_exec_as_app CGO_ENABLED=0 go build -o
 popd
 
 ynh_go_remove
 
 chmod +x "$install_dir/slash"
+
+cp $install_dir/backend-build/slash $install_dir/
 
 #=================================================
 # START SYSTEMD SERVICE
